@@ -61,6 +61,8 @@ The app is a Worker serving the static export in `out/`. Custom domains are decl
 npm run deploy
 ```
 
+Wrangler reads `CLOUDFLARE_API_TOKEN`. This repo also accepts the environment secret `CF_WORKER_API` (same value). Put it on the Cursor environment [Cleverbits Technology WWW](https://cursor.com/dashboard/cloud-agents/environments/e/cf655636-c88a-11f1-bd9f-22db05ab6f0c), then start a **new** Cloud Agent so the secret is injected. Do not commit the token.
+
 Workers Builds (canonical, once this repo is connected in the Cloudflare dashboard):
 
 | Setting | Value |
