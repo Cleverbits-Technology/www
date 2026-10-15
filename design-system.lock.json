@@ -1,0 +1,8 @@
+{
+  "repo": "andrewkriley/design-system",
+  "ref": "v0.1.0",
+  "kind": "profile",
+  "profileId": "business-primary",
+  "url": "https://github.com/andrewkriley/design-system/tree/v0.1.0",
+  "note": "Cleverbits Technology is the flagship operating entity. Consume the business-primary profile (manifest + tokens merged with shared.json). Do not use the therileys-team DEMO pattern on this site."
+}

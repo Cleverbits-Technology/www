@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@import "../generated/design-tokens.css";
+
+:root {
+  --logo-field: #0e0e68;
+  --logo-mint: #00eeba;
+}
+
+@theme inline {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-soft: var(--brand-accent-soft);
+  --color-brand-accent-soft-fill: var(--brand-accent-soft-fill);
+  --color-surface-page: var(--surface-page);
+  --color-surface-card: var(--surface-card);
+  --color-surface-muted: var(--surface-muted);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+  --color-text-on-accent: var(--text-on-accent);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-border-subtle: var(--border-subtle);
+  --shadow-soft: var(--shadow-soft);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-full: var(--radius-full);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 3px;
+}
+
+.prose-content {
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.prose-content :where(h2, h3) {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.prose-content h2 {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.prose-content h3 {
+  margin-top: 1.75rem;
+  font-size: 1.125rem;
+}
+
+.prose-content p,
+.prose-content ul {
+  margin-top: 1rem;
+}
+
+.prose-content ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.prose-content li + li {
+  margin-top: 0.35rem;
+}

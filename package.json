@@ -1,0 +1,47 @@
+{
+  "name": "www-cleverbits",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website for Cleverbits Technology — proactive IT support, security, and remote monitoring in Ryde, NSW.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "tokens": "node scripts/sync-design-system.mjs",
+    "predev": "npm run tokens",
+    "dev": "next dev",
+    "prebuild": "npm run tokens",
+    "build": "next build",
+    "start": "next start",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && node scripts/cf-deploy.mjs",
+    "deploy:preview": "npm run build && wrangler deploy --config wrangler.preview.jsonc --temporary",
+    "k3s:deploy": "bash scripts/k3s-deploy.sh",
+    "lint": "eslint",
+    "typecheck": "npm run tokens && tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cleverbits-Technology/www.git"
+  },
+  "author": "Cleverbits Technology",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "design-system": "github:andrewkriley/design-system#v0.1.0",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^25.6.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.6",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.90.0"
+  }
+}
