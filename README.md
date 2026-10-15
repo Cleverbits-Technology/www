@@ -71,6 +71,14 @@ Workers Builds (canonical, once this repo is connected in the Cloudflare dashboa
 
 `cleverbits.com.au` is already on Cloudflare nameservers. The first deploy creates the Worker custom-domain DNS records for the apex and `www`.
 
+A no-login preview (temporary Cloudflare account, `*.workers.dev` only — no custom domains):
+
+```bash
+npm run deploy:preview
+```
+
+Claim the printed URL in the Cloudflare dashboard if you want to keep that preview. Production still uses `npm run deploy` against the real account.
+
 ## K3s (local / homelab testing)
 
 Static nginx image + Traefik Ingress, applied to whatever `kubectl` context is current.

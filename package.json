@@ -16,6 +16,7 @@
     "start": "next start",
     "preview": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
+    "deploy:preview": "npm run build && wrangler deploy --config wrangler.preview.jsonc --temporary",
     "k3s:deploy": "bash scripts/k3s-deploy.sh",
     "lint": "eslint",
     "typecheck": "npm run tokens && tsc --noEmit"
