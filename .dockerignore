@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+.wrangler
+.open-next
+.git
+.github
+*.log
+.env
+.env*.local
+.dev.vars
+tsconfig.tsbuildinfo
+AGENTS.md

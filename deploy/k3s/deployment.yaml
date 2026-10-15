@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: www-cleverbits
+  namespace: cleverbits-www
+  labels:
+    app.kubernetes.io/name: www-cleverbits
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: www-cleverbits
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: www-cleverbits
+    spec:
+      containers:
+        - name: nginx
+          image: www-cleverbits:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi

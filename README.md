@@ -70,3 +70,24 @@ Workers Builds (canonical, once this repo is connected in the Cloudflare dashboa
 | Node version | `22` |
 
 `cleverbits.com.au` is already on Cloudflare nameservers. The first deploy creates the Worker custom-domain DNS records for the apex and `www`.
+
+## K3s (local / homelab testing)
+
+Static nginx image + Traefik Ingress, applied to whatever `kubectl` context is current.
+
+```bash
+# from a machine that can reach the cluster (node or workstation with kubeconfig)
+npm run k3s:deploy
+# or:
+K3S_HOST=www.cleverbits.home.therileys.team ./scripts/k3s-deploy.sh
+```
+
+That builds `www-cleverbits:local`, imports it into k3s containerd when the `k3s` CLI is present, and applies [`deploy/k3s`](deploy/k3s).
+
+Without LAN DNS:
+
+```bash
+kubectl -n cleverbits-www port-forward svc/www-cleverbits 8080:80
+```
+
+Change the Ingress host by setting `K3S_HOST` or editing `deploy/k3s/ingress.yaml`. Default: `www.cleverbits.home.therileys.team`.

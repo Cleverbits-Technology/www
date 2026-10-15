@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: www-cleverbits
+  namespace: cleverbits-www
+  labels:
+    app.kubernetes.io/name: www-cleverbits
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+    - host: www.cleverbits.home.therileys.team
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: www-cleverbits
+                port:
+                  name: http
